@@ -36,7 +36,7 @@
   "particles": {
     "collisions": {
       "absorb": {
-        "speed": 5
+        "speed": 200
       }
     },
     "move": {
@@ -86,15 +86,15 @@
       }
     },
     "opacity": {
-      "value": 0.5,
+      "value": 1,
       "animation": {
         "count": 0,
-        "enable": false,
-        "speed": 1,
+        "enable": true,
+        "speed": 0,
         "decay": 0,
         "sync": false,
-        "destroy": "none",
-        "startValue": "random",
+        "destroy": true,
+        "startValue": 1,
         "minimumValue": 0.1
       }
     },
@@ -184,16 +184,16 @@
     "destroy": true,
     "orbits": false,
     "size": {
-      "value": 30,
+      "value": 70,
       "density": 2000,
       "limit": {
-        "radius": 30,
-        "mass": 10
+        "radius": 70,
+        "mass": 70
       }
     },
     "position": {
       "x": 75,
-      "y": 2
+      "y": 1
     }
   },
   "emitters": [
