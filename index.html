@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle test</title>
+
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background-color: midnightblue;
+        }
+
+        #points {
+            text-align: center;
+            padding: auto;
+            width: 200px;
+            height: 50px;
+            background-color: black;
+            color: aliceblue;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="tsParticles.loadJSON('emitterParticles.json'); increasePoints(10)" type="button"
+        class="btn btn-dark">start
+        emitter</button>
+    <div id="points"></div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.9.3/tsparticles.bundle.min.js"></script> -->
+    <script src="./node_modules/tsparticles/tsparticles.bundle.min.js"></script>
+    <script type="text/javascript">
+
+        var pointsDiv = document.getElementById('points');
+        var currentPoints = 100;
+        pointsDiv.innerText = currentPoints + " points!"
+
+        function increasePoints(points) {
+                var totalPoints = currentPoints + points;
+                
+                setTimeout(function(){
+                var interval = setInterval(function () {
+                    currentPoints++;
+                    if (currentPoints == totalPoints) clearInterval(interval);                 
+                    pointsDiv.innerText = currentPoints + " points!";
+                }, 200);               
+            }, 1000)
+        }
+    </script>
+</body>
+
+</html>
