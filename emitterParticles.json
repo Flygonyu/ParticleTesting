@@ -210,7 +210,7 @@
       },
       "shape": "square",
       "startCount": 0,
-      "domId": "", 
+      "domId": "start", 
       "direction": "none",
       "particles": {
         "shape": {

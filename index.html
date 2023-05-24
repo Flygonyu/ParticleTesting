@@ -10,31 +10,48 @@
     <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            margin: 0;
+            margin: auto;
             background-color: midnightblue;
+            text-align: center;
         }
 
-        #points {
-            text-align: center;
-            padding: auto;
-            width: 200px;
+        /* #app {
+            width: 390px;
+            height: 844px;
+            margin: auto;
+            position:relative;
+        } */
+
+        .header {
+            text-align: right;
+            width: inherit;
             height: 50px;
             background-color: black;
             color: aliceblue;
-            position: absolute;
-            top: 0px;
-            right: 0px;
             line-height: 50px;
+        }
+
+        #start {
+            margin-top: 45vh;
+        }
+
+        #points {
+            padding-right: 20vw;
         }
     </style>
 </head>
 
 <body>
-    <button onclick="tsParticles.loadJSON('emitterParticles.json'); increasePoints(10)" type="button"
-        class="btn btn-dark">start
-        emitter</button>
-    <div id="points"></div>
-
+    <div id="app">
+        <div id="tsparticles">
+            <div class="header">
+                <div id="points"></div>
+            </div>
+            <button onclick="tsParticles.loadJSON('tsparticles', 'emitterParticles.json'); increasePoints(10)" type="button"
+                class="btn btn-dark" id="start">start emitter</button>
+        </div>
+    </div>
+    
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.9.3/tsparticles.bundle.min.js"></script> -->
     <script src="./node_modules/tsparticles/tsparticles.bundle.min.js"></script>
     <script type="text/javascript">
@@ -44,14 +61,14 @@
         pointsDiv.innerText = currentPoints + " points!"
 
         function increasePoints(points) {
-                var totalPoints = currentPoints + points;
-                
-                setTimeout(function(){
+            var totalPoints = currentPoints + points;
+
+            setTimeout(function () {
                 var interval = setInterval(function () {
                     currentPoints++;
-                    if (currentPoints == totalPoints) clearInterval(interval);                 
+                    if (currentPoints == totalPoints) clearInterval(interval);
                     pointsDiv.innerText = currentPoints + " points!";
-                }, 200);               
+                }, 200);
             }, 1000)
         }
     </script>
